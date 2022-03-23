@@ -1,7 +1,7 @@
-#Tue Mar 22 19:18:21 IST 2022
-base.1=/home/aniil/StudioProjects/resort-master/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
+#Wed Mar 23 20:41:07 IST 2022
+base.1=/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.1=classes2.dex
-base.0=/home/aniil/StudioProjects/resort-master/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.0=/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex

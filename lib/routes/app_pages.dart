@@ -3,6 +3,8 @@
 import 'package:get/get.dart';
 import 'package:resorts/components/home_screen.dart';
 import 'package:resorts/pages/main_home_page.dart';
+import 'package:resorts/pages/resort_details.dart';
+import 'package:resorts/pages/resort_list_page.dart';
 
 import '../components/home_bindings.dart';
 import 'app_routes.dart';
@@ -16,6 +18,10 @@ class AppPages {
       page: () => MainHomePage(),
       binding: HomeBinding(),
     ),
-    
+    GetPage(
+      name: AppRoutes.ResortListPage,
+      page: () => ResortListPage(),
+      // binding: HomeBinding(),
+    ),
   ];
 }

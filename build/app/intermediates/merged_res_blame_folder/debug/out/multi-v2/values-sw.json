@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aniil/StudioProjects/resort-master/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
+            "outputFile": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-sw/values-sw.xml",
             "map": [
                 {
-                    "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/1729610d030977dce8856d24bcddf4c4/appcompat-1.1.0/res/values-sw/values-sw.xml",
+                    "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/1729610d030977dce8856d24bcddf4c4/appcompat-1.1.0/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/fa5f781193668141a0e0c74e875c959d/jetified-play-services-base-16.0.1/res/values-sw/values.xml",
+                    "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/res/values-sw/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-sw/values-sw.xml",
+                    "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/ea36450035c694f8bb6c8c6edef4357b/jetified-play-services-basement-16.0.1/res/values-sw/values.xml",
+                    "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/res/values-sw/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

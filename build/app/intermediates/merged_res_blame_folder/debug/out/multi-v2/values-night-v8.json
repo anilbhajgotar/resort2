@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/aniil/StudioProjects/resort-master/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/1729610d030977dce8856d24bcddf4c4/appcompat-1.1.0/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/1729610d030977dce8856d24bcddf4c4/appcompat-1.1.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/aniil/StudioProjects/resort-master/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

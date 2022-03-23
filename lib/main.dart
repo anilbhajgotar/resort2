@@ -28,14 +28,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-          initialRoute: AppRoutes.HOME,
+      initialRoute: AppRoutes.HOME,
+      routes: {
+        "/": (context) => MainHomePage(),
+        // "/": (context) => ResortListPage(),
+        AppRoutes.HOME: (context) => MainHomePage(),
+        AppRoutes.ResortListPage: (context) => ResortListPage(),
+      },
       getPages: AppPages.list,
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-
-
-
-
 
       // title: 'Resorts',
       // theme: ThemeData(
@@ -70,5 +72,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

@@ -16,28 +16,29 @@ class CarouselSliderDataFound extends StatefulWidget {
 
 class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
   int _current = 0;
-  List<Widget> ?image;
+  List<Widget>? image;
   late List<Widget> imageSlider;
 
   @override
   void initState() {
     image = widget.carouselList
         .map((e) => Container(
-          decoration: BoxDecoration(boxShadow: [
+              decoration: BoxDecoration(boxShadow: [
                 BoxShadow(
                   blurStyle: BlurStyle.outer,
                   blurRadius: 3,
                 )
               ], borderRadius: BorderRadius.circular(10)),
-          // width: 350,
+              // width: 350,
               margin: EdgeInsets.all(10),
               child: Stack(
-                children: 
-                  <Widget>[Container(
+                children: <Widget>[
+                  Container(
                     height: 115,
-                    
                     child: ClipRRect(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10)),
                       child: CachedNetworkImage(
                         // height: 100,
                         fit: BoxFit.cover,
@@ -50,13 +51,9 @@ class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
                             value: downloadProgress.progress,
                           ),
                         ),
-                        
-              
-              
                       ),
                     ),
                   ),
-                  
                   Container(
                     child: Padding(
                       padding: EdgeInsets.only(left: 5.0, top: 40.0),
@@ -97,7 +94,7 @@ class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
       child: CarouselSlider(
           items: image,
           options: CarouselOptions(
-              autoPlay:false,
+              autoPlay: false,
               height: 230,
               initialPage: 1,
               enlargeCenterPage: false,

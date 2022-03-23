@@ -199,6 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   Future signIn() async {
     final user = await GoogleSignInApi.login();
     if (user == null) {
@@ -213,25 +214,13 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget googlebutton() {
     return InkWell(
       onTap: signIn,
-      // () async {
-      //   setState(() {
-          
-      //     circular = true;
-      //   });
-      // },
       child: Container(
         width: MediaQuery.of(context).size.width - 245,
         height: 50,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
-            border: Border.all()
-            // gradient: LinearGradient(colors: [
-            //   Color(0xfffd746c),
-            //   Color(0xffff9068),
-            //   Color(0xfffd746c)
-            // ]),
-            ),
+            border: Border.all()),
         child: Row(
           // mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -250,6 +239,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
   facebookLogin() async {
     try {
       final result =
@@ -257,8 +247,8 @@ class _LoginScreenState extends State<LoginScreen> {
       if (result.status == LoginStatus.success) {
         final userData = await FacebookAuth.i.getUserData();
         print(userData);
-        Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => MainHomePage()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => MainHomePage()));
       }
     } catch (error) {
       print(error);

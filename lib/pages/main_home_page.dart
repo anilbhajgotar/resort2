@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:infinite_carousel/infinite_carousel.dart';
-import 'package:horizontal_card_pager/horizontal_card_pager.dart';
-import 'package:horizontal_card_pager/card_item.dart';
 import 'package:resorts/components/blog_carousel_slider.dart';
 import 'package:resorts/components/event_carousel_slider.dart';
-import 'package:resorts/pages/blog_carousel_widget.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
-import 'package:vertical_card_pager/vertical_card_pager.dart';
+import 'package:resorts/pages/resort_details.dart';
+import 'package:resorts/pages/resort_list_page.dart';
+import 'package:resorts/routes/app_routes.dart';
 
 import '../components/carousel_data_found.dart';
 import '../components/carousel_loading.dart';
@@ -52,35 +49,6 @@ class _MainHomePageState extends State<MainHomePage>
 
   @override
   Widget build(BuildContext context) {
-    final List<String> titles = [
-      "RED",
-      "YELLOW",
-      "BLACK",
-      "CYAN",
-      "BLUE",
-      "GREY",
-    ];
-
-    final List<Widget> images = [
-      Container(
-        color: Colors.red,
-      ),
-      Container(
-        color: Colors.yellow,
-      ),
-      Container(
-        color: Colors.black,
-      ),
-      Container(
-        color: Colors.cyan,
-      ),
-      Container(
-        color: Colors.blue,
-      ),
-      Container(
-        color: Colors.grey,
-      ),
-    ];
     return Scaffold(
       bottomNavigationBar: BottomNavBarFb5(),
       body: SafeArea(
@@ -120,9 +88,7 @@ class _MainHomePageState extends State<MainHomePage>
                 ),
               ];
             },
-            body:
-                
-                ListView(
+            body: ListView(
               children: [
                 Column(
                   children: <Widget>[
@@ -133,74 +99,81 @@ class _MainHomePageState extends State<MainHomePage>
                     SizedBox(
                       height: 10,
                     ),
-                    Container(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 20, top: 50),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.yellow.shade400,
-                                    borderRadius: BorderRadius.circular(10)),
-                                height: 30,
-                                width: 200,
-                                child: Center(
-                                  child: Text(
-                                    'No More Payments',
-                                    style: TextStyle(
-                                      color: color3,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w600,
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.ResortListPage);
+                      },
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 20, top: 50),
+                              child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.yellow.shade400,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  height: 30,
+                                  width: 200,
+                                  child: Center(
+                                    child: Text(
+                                      'No More Payments',
+                                      style: TextStyle(
+                                        color: color3,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 20, top: 5),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    color: color1,
-                                    borderRadius: BorderRadius.circular(10)),
-                                height: 45,
-                                width: 250,
-                                child: Center(
-                                  child: Text(
-                                    'BOOK NOW',
-                                    style: TextStyle(
-                                      color: color2,
-                                      fontSize: 38,
-                                      fontWeight: FontWeight.w600,
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 20, top: 5),
+                              child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: color1,
+                                      borderRadius: BorderRadius.circular(10)),
+                                  height: 45,
+                                  width: 250,
+                                  child: Center(
+                                    child: Text(
+                                      'BOOK NOW',
+                                      style: TextStyle(
+                                        color: color2,
+                                        fontSize: 38,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      // height: 500.0,
-                      height: MediaQuery.of(context).size.height - 350.0,
-                      width: MediaQuery.of(context).size.width - 40.0,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          boxShadow: [
-                            BoxShadow(blurRadius: 5, blurStyle: BlurStyle.outer)
                           ],
-                          color: color2,
-                          image: DecorationImage(
-                              image: new AssetImage("images/resort/resort.jpg"),
-                              //  NetworkImage(
-                              //     "https://www.excelebiz.in/major-advantages-of-booking-a-hotel-on-online/"),
-                              fit: BoxFit.fill)),
+                        ),
+                        // height: 500.0,
+                        height: MediaQuery.of(context).size.height - 350.0,
+                        width: MediaQuery.of(context).size.width - 40.0,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 5, blurStyle: BlurStyle.outer)
+                            ],
+                            color: color2,
+                            image: DecorationImage(
+                                image:
+                                    new AssetImage("images/resort/resort.jpg"),
+                                //  NetworkImage(
+                                //     "https://www.excelebiz.in/major-advantages-of-booking-a-hotel-on-online/"),
+                                fit: BoxFit.fill)),
+                      ),
                     ),
                     SizedBox(
                       height: 10,
@@ -235,7 +208,7 @@ class _MainHomePageState extends State<MainHomePage>
                           return Container();
                       },
                     ),
-                    
+
 //Event Carousal Slide
                     SizedBox(
                       height: 20,

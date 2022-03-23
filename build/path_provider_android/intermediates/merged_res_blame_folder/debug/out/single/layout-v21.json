@@ -1,18 +1,18 @@
 [
     {
-        "merged": "/home/aniil/StudioProjects/resort-master/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
-        "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_action_tombstone.xml"
+        "merged": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
     },
     {
-        "merged": "/home/aniil/StudioProjects/resort-master/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
-        "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
+        "merged": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_action.xml"
     },
     {
-        "merged": "/home/aniil/StudioProjects/resort-master/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_action.xml",
-        "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_action.xml"
+        "merged": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "/home/aniil/StudioProjects/resort-master/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
-        "source": "/home/aniil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_template_custom_big.xml"
+        "merged": "/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/path_provider_android/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/res/layout-v21/notification_template_icon_group.xml"
     }
 ]
