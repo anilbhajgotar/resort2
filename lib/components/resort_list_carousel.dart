@@ -24,14 +24,6 @@ class _ResortListCarousel extends State<ResortListCarousel> {
   void initState() {
     image = widget.carouselList
         .map((e) => Container(
-              // decoration: BoxDecoration(boxShadow: [
-              //   BoxShadow(
-              //     blurStyle: BlurStyle.outer,
-              //     blurRadius: 3,
-              //   )
-              // ], borderRadius: BorderRadius.circular(10)),
-              // width: 350,
-              // margin: EdgeInsets.all(10),
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -42,7 +34,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                           topRight: Radius.circular(10)),
                       child: CachedNetworkImage(
                         // height: 100,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fitWidth,
                         // width: 400,
                         imageUrl: e.image,
                         errorWidget: (context, url, error) => Icon(Icons.error),
@@ -90,7 +82,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
               return Container(
                 width: 8,
                 height: 8,
-                margin: EdgeInsets.symmetric(vertical: 10, horizontal: 2),
+                margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _current == index

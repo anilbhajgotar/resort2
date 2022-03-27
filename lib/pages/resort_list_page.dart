@@ -1,11 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:resorts/components/resort_list_carousel.dart';
+import 'package:resorts/controllers/guest_select.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
+import 'package:resorts/pages/demo.dart';
 import 'package:resorts/pages/main_home_page.dart';
+import 'package:resorts/pages/profile_image.dart';
 import 'package:resorts/routes/app_routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -14,88 +18,42 @@ import '../components/carousel_loading.dart';
 import '../controllers/home_controllers.dart';
 
 class ResortListPage extends StatefulWidget {
-  ResortListPage({Key? key}) : super(key: key);
+  late final Item catelog;
+  ResortListPage({Key? key, Item? catalog}) : super(key: key);
 
   @override
   State<ResortListPage> createState() => _ResortListPageState();
 }
 
 class _ResortListPageState extends State<ResortListPage> {
+  String dropdownvalue = 'All types';
+  final Color color1 = const Color(0xff4338CA);
+  final Color color2 = HexColor('#f9f9f9');
+  final Color color3 = HexColor('#585858');
+  final Color color4 = HexColor('#ff7a8a');
+  TextEditingController dateCtl = TextEditingController();
+
+  // List of items in our dropdown menu
+  var items = [
+    'All types',
+    'Guest 10',
+    'Guest 8',
+    'Guest 6',
+    'Guest 4',
+  ];
   TextEditingController _textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final Color color2 = HexColor('#f9f9f9');
-    final List<String> imgList = [
-      'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-      'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-      'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-      'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
-      'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-      'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
-    ];
-    final List<Widget> imageSliders = imgList
-        .map((item) => Container(
-              child: Container(
-                margin: EdgeInsets.all(5.0),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    child: Stack(
-                      children: <Widget>[
-                        Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                        Positioned(
-                          bottom: 0.0,
-                          left: 0.0,
-                          right: 0.0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(200, 0, 0, 0),
-                                  Color.fromARGB(0, 0, 0, 0)
-                                ],
-                                begin: Alignment.bottomCenter,
-                                end: Alignment.topCenter,
-                              ),
-                            ),
-                            padding: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 20.0),
-                            child: Text(
-                              'No. ${imgList.indexOf(item)} image',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )),
-              ),
-            ))
-        .toList();
+
     return SafeArea(
         child: Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: color2,
-      //   leading: InkWell(
-      //     onTap: () {
-      //       Navigator.pushNamed(context, AppRoutes.HOME);
-      //     },
-      //     child: Icon(
-      //       Icons.chevron_left,
-      //       size: 40,
-      //       color: Colors.black,
-      //     ),
-      //   ),
-      //   title: SearchInputFb1(
-      //       searchController: _textEditingController, hintText: "hintText"),
-      // ),
+      bottomNavigationBar: BottomNavBarFb5(),
       body: NestedScrollView(
         headerSliverBuilder: (context, bool innerBoxScrolled) {
           return <Widget>[
-            // AppBar(),
             SliverAppBar(
+              backgroundColor: color2,
               elevation: 0.0,
               leading: InkWell(
                 onTap: () {
@@ -110,17 +68,220 @@ class _ResortListPageState extends State<ResortListPage> {
               title: SearchInputFb1(
                   searchController: _textEditingController,
                   hintText: "All cities"),
-              // VStack([
-              //   VxBox().size(20, 2).white.make(),
-              //   5.heightBox,
-              //   VxBox().size(28, 2).white.make(),
-              //   5.heightBox,
-              //   VxBox().size(15, 2).white.make(),
-              //   5.heightBox,
-              // ]).pOnly(left: 15, top: 15),
-              // backgroundColor: Colors.transparent,
             ),
-            SliverAppBar(),
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              actions: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                DateTime? date = DateTime(1900);
+                                FocusScope.of(context)
+                                    .requestFocus(new FocusNode());
+
+                                date = await showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(1900),
+                                    lastDate: DateTime(2100));
+
+                                dateCtl.text = date!.toIso8601String();
+                              },
+                              child: Row(
+                                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 10,
+                                      ),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Icon(
+                                          Icons.calendar_month_outlined,
+                                          color: color1,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Text(
+                                        "Dates",
+                                        style: TextStyle(
+                                            fontSize: 16, color: Colors.black),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MultipleGridView()));
+                        },
+                        child: Row(
+                          children: [
+                            Container(
+                              child: Icon(
+                                Feather.user,
+                                color: color1,
+                              ),
+                            ),
+                            Container(
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  "Guest",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      fontSize: 16),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Icon(Icons.keyboard_arrow_down,
+                                  color: color1),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SliverAppBar(
+              backgroundColor: Colors.white,
+              actions: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, AppRoutes.FilterPage);
+                              },
+                              child: Row(
+                                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 10,
+                                      ),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Icon(
+                                          Icons.tune,
+                                          color: color1,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Text(
+                                        "Filter",
+                                        style: TextStyle(
+                                            fontSize: 16, color: Colors.black),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      // Align(
+                      //   alignment: Alignment.center,
+                      //   child: Row(
+                      //     children: [
+                      //       Container(
+                      //         child: Icon(
+                      //           Icons.house,
+                      //           color: color1,
+                      //         ),
+                      //       ),
+                      //       Container(
+                      //         child: Padding(
+                      //           padding: const EdgeInsets.all(8.0),
+                      //           child: DropdownButton(
+                      //               value: dropdownvalue,
+                      //               items: items.map((String items) {
+                      //                 return DropdownMenuItem(
+                      //                   value: items,
+                      //                   child: Text(items),
+                      //                 );
+                      //               }).toList(),
+                      //               onChanged: (String? newValue) {
+                      //                 setState(() {
+                      //                   dropdownvalue = newValue!;
+                      //                 });
+                      //               }),
+                      //         ),
+                      //       ),
+                      //       // Container(
+                      //       //   child: Icon(Icons.keyboard_arrow_down,
+                      //       //       color: color1),
+                      //       // ),
+                      //     ],
+                      //   ),
+                      // ),
+                      Row(
+                        children: [
+                          Container(
+                            child: Icon(
+                              Icons.sort_outlined,
+                              color: color1,
+                            ),
+                          ),
+                          Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Text(
+                                  "Sort",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black,
+                                      fontSize: 16),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            )
           ];
         },
         body:

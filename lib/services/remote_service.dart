@@ -9,7 +9,8 @@ class RemoteService {
   static Future<dynamic> fetchCarouselData() async {
     try {
       var response = await client.get(
-        Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
+        // Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
+        Uri.parse('127.0.0.1:8000/api/events'),
       );
       if (response.statusCode == 200) {
         return carouselFromJson(response.body);

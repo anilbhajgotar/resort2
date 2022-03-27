@@ -7,6 +7,7 @@ import 'package:resorts/components/blog_carousel_slider.dart';
 import 'package:resorts/components/event_carousel_slider.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
+import 'package:resorts/pages/demo.dart';
 import 'package:resorts/pages/resort_details.dart';
 import 'package:resorts/pages/resort_list_page.dart';
 import 'package:resorts/routes/app_routes.dart';
@@ -102,6 +103,10 @@ class _MainHomePageState extends State<MainHomePage>
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, AppRoutes.ResortListPage);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ResortListPage()));
                       },
                       child: Container(
                         child: Column(
@@ -196,17 +201,21 @@ class _MainHomePageState extends State<MainHomePage>
                     SizedBox(
                       height: 10,
                     ),
-                    GetBuilder<HomeController>(
-                      builder: (_c) {
-                        if (_c.isLoading) if (_c.carouselData.length > 0)
-                          return CarouselSliderDataFound(_c.carouselData);
-                        else
-                          return CarouselLoading();
-                        else if (_c.carouselData.length > 0)
-                          return CarouselSliderDataFound(_c.carouselData);
-                        else
-                          return Container();
-                      },
+                    InkWell(
+                      onTap: () => Navigator.pushNamed(
+                          context, AppRoutes.ResortListPage),
+                      child: GetBuilder<HomeController>(
+                        builder: (_c) {
+                          if (_c.isLoading) if (_c.carouselData.length > 0)
+                            return CarouselSliderDataFound(_c.carouselData);
+                          else
+                            return CarouselLoading();
+                          else if (_c.carouselData.length > 0)
+                            return CarouselSliderDataFound(_c.carouselData);
+                          else
+                            return Container();
+                        },
+                      ),
                     ),
 
 //Event Carousal Slide

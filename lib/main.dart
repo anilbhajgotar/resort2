@@ -5,6 +5,7 @@ import 'package:resorts/pages/account_edit_page.dart';
 import 'package:resorts/pages/account_page.dart';
 import 'package:resorts/pages/booking_page.dart';
 import 'package:resorts/pages/demo.dart';
+import 'package:resorts/pages/filter_page.dart';
 import 'package:resorts/pages/homePage.dart';
 import 'package:resorts/pages/inbox_page.dart';
 import 'package:resorts/pages/loginPage.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         // "/": (context) => ResortListPage(),
         AppRoutes.HOME: (context) => MainHomePage(),
         AppRoutes.ResortListPage: (context) => ResortListPage(),
+        AppRoutes.FilterPage: (context) => FilterPage(),
       },
       getPages: AppPages.list,
       debugShowCheckedModeBanner: false,

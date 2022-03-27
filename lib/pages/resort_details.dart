@@ -19,6 +19,7 @@ class _ResortDetailsPage extends State<ResortDetailsPage> {
   TextEditingController dateCtl = TextEditingController();
 
   final primaryColor = const Color(0xff4338CA);
+
   // List<Color> colorsList = [Colors.red, Colors.green, Colors.blue];
   Color? color;
   String dropdownvalue = 'Guest 12';
