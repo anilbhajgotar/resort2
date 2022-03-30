@@ -10,17 +10,16 @@ class Carousel {
   Carousel({
     required this.id,
     required this.image,
+    required this.title,
   });
 
-  final String id;
+  final int id;
   final String image;
-
+  final String title;
   factory Carousel.fromJson(Map<String, dynamic> json) => Carousel(
-      id: json["id"] == null ? null : json["id"],
-      // image: json["image"]["url"] == null ? null : json["image"]["url"],
-
-      image:
-          "https://res.cloudinary.com/programming-night/image/upload/v1614513604/thumbnail_gemma_stpj_HJ_Gq_Zyw_unsplash_9bf251892f.jpg" //json["image"]["url"] == null ? null : json["image"]["url"],
+        id: json["id"] == null ? null : json["id"],
+        image: json["image"] == null ? null : json["image"],
+        title: json["title"] == null ? null : json["title"],
       );
 
   Map<String, dynamic> toJson() => {

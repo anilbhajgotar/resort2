@@ -8,6 +8,7 @@ import 'package:resorts/controllers/guest_select.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
 import 'package:resorts/pages/demo.dart';
+import 'package:resorts/pages/guest_select.dart';
 import 'package:resorts/pages/main_home_page.dart';
 import 'package:resorts/pages/profile_image.dart';
 import 'package:resorts/routes/app_routes.dart';
@@ -133,7 +134,7 @@ class _ResortListPageState extends State<ResortListPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MultipleGridView()));
+                                  builder: (context) => GuestSelect()));
                         },
                         child: Row(
                           children: [

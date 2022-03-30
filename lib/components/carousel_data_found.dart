@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +46,8 @@ class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
                         fit: BoxFit.cover,
                         // width: 400,
                         imageUrl: e.image,
+                        // Image.network(e.image);//  e.image,
+
                         errorWidget: (context, url, error) => Icon(Icons.error),
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
@@ -60,7 +64,7 @@ class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          "Resort Couple",
+                          e.title,
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w500),
                         ),
@@ -89,6 +93,7 @@ class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
 
   @override
   Widget build(BuildContext context) {
+    // print("data Found");
     return Container(
       margin: EdgeInsets.all(10),
       child: CarouselSlider(

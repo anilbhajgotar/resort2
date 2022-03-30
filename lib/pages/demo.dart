@@ -1,206 +1,142 @@
-import 'package:flutter/material.dart';
-import 'package:resorts/controllers/guest_select.dart';
-import 'package:resorts/pages/resort_list_page.dart';
 
-import '../routes/app_routes.dart';
 
-class MultipleGridView extends StatelessWidget {
-  static var guest;
-  // late final Item catelog;
-  @override
-  Widget build(BuildContext context) {
-    final Item catalog;
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Container(
-              margin: EdgeInsets.all(10),
-              // width: MediaQuery.of(context).size.width / 1.5,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 30, horizontal: 10),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Guest(s)",
-                        style: TextStyle(
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(30),
-                    child: GridView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                        crossAxisSpacing: 30.0,
-                        mainAxisSpacing: 30.0,
-                      ),
-                      itemCount: 16,
-                      itemBuilder: (context, index) {
-                        guest = index;
-                        guest = guest + 1;
-                        return Align(
-                          alignment: Alignment.center,
-                          child: InkWell(
-                            onTap: () {
-                              print("$guest");
-                              // Navigator.pushNamed(context, AppRoutes.HOME);
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Color(0xf9f9f9f),
-                                  borderRadius: BorderRadius.circular(8)),
-                              // color: Colors.blue,
-                              child:
-                                  Center(child: InkWell(child: Text("$guest"))),
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, AppRoutes.ResortListPage);
-                      },
-                      child: Container(
-                        child: Text(
-                          "SKIP",
-                          style: TextStyle(color: Color(0xff4338CA)),
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ResortListPage(catalog: guest)));
-                      },
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                            color: Color(0xff4338CA),
-                            borderRadius: BorderRadius.circular(8)),
-                        child: Center(
-                            child: Text(
-                          "SAVE",
-                          style: TextStyle(color: Colors.white),
-                        )),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-        // ListView(
-        //   children: <Widget>[
-        //     Padding(
-        //       padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 5),
-        //       child: Text(
-        //         "Guest(s)",
-        //         style: TextStyle(
-        //           fontSize: 16,
-        //         ),
-        //       ),
-        //     ),
-        //     Container(
-        //       margin: EdgeInsets.all(30),
-        //       child: GridView.builder(
-        //         physics: NeverScrollableScrollPhysics(),
-        //         shrinkWrap: true,
-        //         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //           crossAxisCount: 4,
-        //           crossAxisSpacing: 30.0,
-        //           mainAxisSpacing: 30.0,
-        //         ),
-        //         itemCount: 16,
-        //         itemBuilder: (context, index) {
-        //           return Container(
-        //             color: Colors.blue,
-        //             child: Text("index: $index"),
-        //           );
-        //         },
-        //       ),
-        //     ),
-        //     Text("Title 2"),
-        //     GridView.builder(
-        //       physics: NeverScrollableScrollPhysics(),
-        //       shrinkWrap: true,
-        //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //         crossAxisCount: 5,
-        //         crossAxisSpacing: 5.0,
-        //         mainAxisSpacing: 5.0,
-        //       ),
-        //       itemCount: 10,
-        //       itemBuilder: (context, index) {
-        //         return Container(
-        //           color: Colors.blue,
-        //           child: Text("index: $index"),
-        //         );
-        //       },
-        //     ),
-        //     Text("Title 3"),
-        //     GridView.builder(
-        //       physics: NeverScrollableScrollPhysics(),
-        //       shrinkWrap: true,
-        //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //         crossAxisCount: 5,
-        //         crossAxisSpacing: 5.0,
-        //         mainAxisSpacing: 5.0,
-        //       ),
-        //       itemCount: 10,
-        //       itemBuilder: (context, index) {
-        //         return Container(
-        //           color: Colors.blue,
-        //           child: Text("index: $index"),
-        //         );
-        //       },
-        //     ),
-        //     Text("Title 4"),
-        //     GridView.builder(
-        //       physics: NeverScrollableScrollPhysics(),
-        //       shrinkWrap: true,
-        //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //         crossAxisCount: 5,
-        //         crossAxisSpacing: 5.0,
-        //         mainAxisSpacing: 5.0,
-        //       ),
-        //       itemCount: 10,
-        //       itemBuilder: (context, index) {
-        //         return Container(
-        //           color: Colors.blue,
-        //           child: Text("index: $index"),
-        //         );
-        //       },
-        //     )
-        //   ],
-        // ),
-      ),
-    );
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:resorts/controllers/guest_select.dart';
+// import 'package:resorts/pages/resort_list_page.dart';
+
+// import '../routes/app_routes.dart';
+
+// class MultipleGridView extends StatelessWidget {
+//   static var guest;
+//   // late final Item catelog;
+//   @override
+//   Widget build(BuildContext context) {
+//     final Item catalog;
+//     return SafeArea(
+//       child: Scaffold(
+//         body: Stack(
+//           children: [
+//             Container(
+//               margin: EdgeInsets.all(10),
+//               // width: MediaQuery.of(context).size.width / 1.5,
+//               child: Column(
+//                 children: [
+//                   Padding(
+//                     padding: const EdgeInsets.symmetric(
+//                         vertical: 30, horizontal: 10),
+//                     child: Align(
+//                       alignment: Alignment.centerLeft,
+//                       child: Text(
+//                         "Guest(s)",
+//                         style: TextStyle(
+//                           fontSize: 16,
+//                         ),
+//                       ),
+//                     ),
+//                   ),
+//                   Container(
+//                     margin: EdgeInsets.all(30),
+//                     child: GridView.builder(
+//                       physics: NeverScrollableScrollPhysics(),
+//                       shrinkWrap: true,
+//                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                         crossAxisCount: 4,
+//                         crossAxisSpacing: 30.0,
+//                         mainAxisSpacing: 30.0,
+//                       ),
+//                       itemCount: 16,
+//                       itemBuilder: (context, index) {
+//                         guest = index;
+//                         guest = guest + 1;
+//                         return Align(
+//                           alignment: Alignment.center,
+//                           child: InkWell(
+//                             onTap: () {
+//                               print("$guest");
+//                               // Navigator.pushNamed(context, AppRoutes.HOME);
+//                             },
+//                             child: Container(
+//                               decoration: BoxDecoration(
+//                                   color: Color(0xf9f9f9f),
+//                                   borderRadius: BorderRadius.circular(8)),
+//                               // color: Colors.blue,
+//                               child:
+//                                   Center(child: InkWell(child: Text("$guest"))),
+//                             ),
+//                           ),
+//                         );
+//                       },
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             Padding(
+//               padding: const EdgeInsets.all(10.0),
+//               child: Align(
+//                 alignment: Alignment.bottomCenter,
+//                 child: Row(
+//                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                   children: [
+//                     InkWell(
+//                       onTap: () {
+//                         Navigator.pushNamed(context, AppRoutes.ResortListPage);
+//                       },
+//                       child: Container(
+//                         child: Text(
+//                           "SKIP",
+//                           style: TextStyle(color: Color(0xff4338CA)),
+//                         ),
+//                       ),
+//                     ),
+//                     InkWell(
+//                       onTap: () {
+//                         Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) =>
+//                                     ResortListPage(catalog: guest)));
+//                       },
+//                       child: Container(
+//                         height: 40,
+//                         width: 80,
+//                         decoration: BoxDecoration(
+//                             color: Color(0xff4338CA),
+//                             borderRadius: BorderRadius.circular(8)),
+//                         child: Center(
+//                             child: Text(
+//                           "SAVE",
+//                           style: TextStyle(color: Colors.white),
+//                         )),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             )
+//           ],
+//         ),
+        
+//       ),
+//     );
+//   }
+// }
 
 
 

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -11,9 +12,10 @@ import 'package:resorts/pages/demo.dart';
 import 'package:resorts/pages/resort_details.dart';
 import 'package:resorts/pages/resort_list_page.dart';
 import 'package:resorts/routes/app_routes.dart';
-
+import 'package:http/http.dart' as http;
 import '../components/carousel_data_found.dart';
 import '../components/carousel_loading.dart';
+import '../controllers/guest_select.dart';
 import '../controllers/home_controllers.dart';
 
 class MainHomePage extends StatefulWidget {
@@ -25,6 +27,7 @@ class MainHomePage extends StatefulWidget {
 
 class _MainHomePageState extends State<MainHomePage>
     with SingleTickerProviderStateMixin {
+  static String url = 'http://mzonefitness.com/test.json';
   final Color color1 = const Color(0xff4338CA);
   final Color color2 = HexColor('#f9f9f9');
   final Color color3 = HexColor('#585858');
@@ -39,7 +42,9 @@ class _MainHomePageState extends State<MainHomePage>
       length: 2,
       vsync: this,
     );
+
     super.initState();
+    // loadData();
   }
 
   @override
@@ -47,6 +52,21 @@ class _MainHomePageState extends State<MainHomePage>
     _tabController?.dispose();
     super.dispose();
   }
+
+  // static loadData() async {
+  //   await Future.delayed(Duration(seconds: 1));
+
+  //   final response = await http.get(Uri.parse(url));
+  //   final catalogJson = response.body;
+
+  //   final decodeData = jsonDecode(catalogJson);
+
+  //   final productData = decodeData["products"];
+  //   CatalogModel.items =
+  //       List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
+
+  //   // setState(() {});
+  // }
 
   @override
   Widget build(BuildContext context) {
