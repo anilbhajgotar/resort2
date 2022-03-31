@@ -1,4 +1,4 @@
-#Tue Mar 29 17:08:52 IST 2022
+#Wed Mar 30 20:47:32 IST 2022
 base.1=/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.1=classes2.dex
 base.0=/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex

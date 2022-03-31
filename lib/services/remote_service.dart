@@ -17,32 +17,33 @@ class RemoteService {
 //original code
       var response = await client.get(
         //   // Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
-        //   Uri.parse('http://mzonefitness.com/test.json'),
+        // Uri.parse('http://mzonefitness.com/test.json'),
 
         Uri.parse('http://127.0.0.1:8000/api/events'),
       );
       // final response = await http.get(Uri.parse(url));
       print(response.body);
       print("object");
+      final cataLogJson = response.body;
+      final decodeData = jsonDecode(cataLogJson);
+      // var productData = decodeData["products"];
       // final cataLogJson = response.body;
       // final decodeData = jsonDecode(cataLogJson);
-      // var productData = decodeData["products"];
 
       if (response.statusCode == 200) {
         // print(response.statusCode);
-        // print("if called");
-        // return carouselFromJson(response.body);
-        // final cataLogJson = response.body;
-        // final decodeData = jsonDecode(cataLogJson);
+        print("if called");
+        // // return carouselFromJson(response.body);
+
         // productData = decodeData["products"];
         // print(productData);
-        print("if is called");
-        // return carouselDemoFromJson(productData);
+        // print("if is called");
+        // return carouselFromJson(productData);
         return carouselFromJson(response.body);
       }
       // // print(response.body);
 
-      return carouselDemoFromJson(productData);
+      // return carouselFromJson(decodeData);
     } catch (e) {
       // print(e);
       // print("object");
