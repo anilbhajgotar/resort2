@@ -45,7 +45,7 @@ class HomeControllerMainImage extends GetxController {
       // data = await RemoteService.fetchCarouselData();
       // catalog = await GetData.loadData();
 
-      print(data);
+      // print(data);
       print("anil");
       if (data != null) {
         // print("anil");

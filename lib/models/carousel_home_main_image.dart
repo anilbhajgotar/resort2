@@ -20,8 +20,8 @@ class CarouselMainImage {
   final String image;
   final String title;
   factory CarouselMainImage.fromJson(Map<String, dynamic> json) {
-    print(json["image"]);
-    print(json["id"]);
+    // print(json["image"]);
+    // print(json["id"]);
     return CarouselMainImage(
       id: json["_id"] == null ? null : json["_id"],
       // image: json["image"] == null ? null : json["image"],

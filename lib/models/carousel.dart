@@ -6,6 +6,13 @@ List<Carousel> carouselFromJson(String str) =>
 String carouselToJson(List<Carousel> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
+class CatelogData {
+  static List<Carousel>? items;
+  Carousel getById(String id) =>
+      items!.firstWhere((element) => element.id == id, orElse: null);
+  Carousel getByPosition(int pos) => items![pos];
+}
+
 class Carousel {
   Carousel({
     required this.id,
@@ -13,8 +20,8 @@ class Carousel {
     required this.title,
   });
 
-  // final int id;
-  final String id;
+  final int id;
+  // final String id;
 
   final String image;
   final String title;
@@ -22,9 +29,9 @@ class Carousel {
     print(json["image"]);
     print(json["id"]);
     return Carousel(
-      id: json["_id"] == null ? null : json["_id"],
+      id: json["id"] == null ? null : json["id"],
       // image: json["image"] == null ? null : json["image"],
-      image: json["image"]["url"] == null ? null : json["image"]["url"],
+      image: json["image"] == null ? null : json["image"],
 
       // image:
       //     "https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_900,h_700/https://herculesfitness.co.in/wp-content/uploads/sites/11/2020/12/tm22e.png",

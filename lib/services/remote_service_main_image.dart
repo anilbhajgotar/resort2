@@ -28,8 +28,8 @@ class RemoteServiceMainImage {
       // );
       // final response =
       //     await http.get(Uri.parse("http://127.0.0.1:8000/api/events"));
-      print(response.body);
-      print("object");
+      // print(response.body);
+      // print("object");
       // final cataLogJson = response.body;
       // final decodeData = jsonDecode(cataLogJson);
       // var productData = decodeData["products"];

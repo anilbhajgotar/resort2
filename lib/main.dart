@@ -41,35 +41,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
 
-      // title: 'Resorts',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      // debugShowCheckedModeBanner: false,
-      // // initialRoute: MyRoutes.accountEditPage,
-      // // initialRoute: MyRoutes.resortListPage,
-      // // initialRoute: MyRoutes.homeController,
-      // initialRoute: MyRoutes.homeRoute,
-      // routes: {
-      //   // "/": (context) => HomeController(),
-      //   "/": (context) => MainHomePage(),
-      //   // "/": (context) => SupportGuest(),
-      //   MyRoutes.homeRoute: (context) => MainHomePage(),
-      //   MyRoutes.accountPage: (context) => AccountPage(),
-      //   MyRoutes.loginRoute: (context) => LoginScreen(),
-      //   MyRoutes.supportGuest: (context) => SupportGuest(),
-      //   // MyRoutes.demo: (context) => DemoPage(),
-      //   MyRoutes.settingPage: (context) => SettingPage(),
-      //   MyRoutes.inboxPage: (context) => InboxPage(),
-      //   MyRoutes.accountEditPage: (context) => AccountEditPage(),
-      //   MyRoutes.bookingPage: (context) => BookingPage(),
-      //   MyRoutes.savedBookingPage: (context) => SavedResortPage(),
-      //   MyRoutes.resortDetailsPage: (context) => ResortDetailsPage(),
-      //   MyRoutes.resortListPage: (context) => ResortListPage(),
-
-      //   // "/home": (context) => LoginScreen(),
-      // },
-
       // home: const MyHomePage(),
     );
   }

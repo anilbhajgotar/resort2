@@ -164,8 +164,7 @@ class _GuestSelectState extends State<GuestSelect> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    ResortListPage(catalog: guest)));
+                                builder: (context) => ResortListPage()));
                       },
                       child: Container(
                         height: 40,

@@ -9,6 +9,7 @@ import 'package:resorts/components/carousel_slider_mian_image.dart';
 import 'package:resorts/components/event_carousel_slider.dart';
 import 'package:resorts/controllers/home_controllers%20event.dart';
 import 'package:resorts/controllers/home_controllers_main_image.dart';
+import 'package:resorts/models/carousel.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
 import 'package:resorts/pages/demo.dart';
@@ -22,7 +23,11 @@ import '../controllers/guest_select.dart';
 import '../controllers/home_controllers.dart';
 
 class MainHomePage extends StatefulWidget {
-  MainHomePage({Key? key}) : super(key: key);
+  // final Carousel catalog;
+
+  MainHomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<MainHomePage> createState() => _MainHomePageState();
@@ -30,6 +35,7 @@ class MainHomePage extends StatefulWidget {
 
 class _MainHomePageState extends State<MainHomePage>
     with SingleTickerProviderStateMixin {
+  // final Carousel ? catalog;
   final Color color1 = const Color(0xff4338CA);
   final Color color2 = HexColor('#f9f9f9');
   final Color color3 = HexColor('#585858');
@@ -108,7 +114,8 @@ class _MainHomePageState extends State<MainHomePage>
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.pushNamed(context, AppRoutes.ResortListPage);
+                        // Navigator.pushReplacementNamed(
+                        //     context, AppRoutes.ResortListPage);
                         Navigator.push(
                             context,
                             MaterialPageRoute(

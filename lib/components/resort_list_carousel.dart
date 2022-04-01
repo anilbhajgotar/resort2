@@ -166,43 +166,66 @@ class _ResortListCarousel extends State<ResortListCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // margin: EdgeInsets.all(10),
-      child: Column(
-        children: [
-          CarouselSlider(
-              items: image,
-              options: CarouselOptions(
-                  autoPlay: false,
-                  height: 230,
-                  initialPage: 0,
-                  enlargeCenterPage: false,
-                  // aspectRatio: 16/9,
-                  enableInfiniteScroll: false,
-                  viewportFraction: 1,
-                  onPageChanged: (index, reason) {
-                    setState(() {
-                      _current = index;
-                    });
-                  })),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: widget.carouselList.map((e) {
-          //     int index = widget.carouselList.indexOf(e);
-          //     return Container(
-          //       width: 8,
-          //       height: 8,
-          //       margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
-          //       decoration: BoxDecoration(
-          //           shape: BoxShape.circle,
-          //           color: _current == index
-          //               ? Color.fromRGBO(0, 0, 0, 0.9)
-          //               : Color.fromRGBO(0, 0, 0, 0.4)),
-          //     );
-          //   }).toList(),
-          // )
-        ],
-      ),
-    );
+    return ListView.builder(
+        itemCount: image!.length,
+        itemBuilder: (context, index) {
+          final catalog = image![index];
+          return Container(
+            margin: EdgeInsets.all(10),
+            child: CarouselSlider(
+                items: image,
+                options: CarouselOptions(
+                    autoPlay: false,
+                    height: 230,
+                    initialPage: 0,
+                    enlargeCenterPage: false,
+                    // aspectRatio: 16/9,
+                    enableInfiniteScroll: false,
+                    viewportFraction: 1,
+                    onPageChanged: (index, reason) {
+                      setState(() {
+                        _current = index;
+                      });
+                    })),
+          );
+        });
+    // Container(
+    //   // margin: EdgeInsets.all(10),
+    //   child: Column(
+    //     children: [
+    //       CarouselSlider(
+    //           items: image,
+    //           options: CarouselOptions(
+    //               autoPlay: false,
+    //               height: 230,
+    //               initialPage: 0,
+    //               enlargeCenterPage: false,
+    //               // aspectRatio: 16/9,
+    //               enableInfiniteScroll: false,
+    //               viewportFraction: 1,
+    //               onPageChanged: (index, reason) {
+    //                 setState(() {
+    //                   _current = index;
+    //                 });
+    //               })),
+    //       // Row(
+    //       //   mainAxisAlignment: MainAxisAlignment.center,
+    //       //   children: widget.carouselList.map((e) {
+    //       //     int index = widget.carouselList.indexOf(e);
+    //       //     return Container(
+    //       //       width: 8,
+    //       //       height: 8,
+    //       //       margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+    //       //       decoration: BoxDecoration(
+    //       //           shape: BoxShape.circle,
+    //       //           color: _current == index
+    //       //               ? Color.fromRGBO(0, 0, 0, 0.9)
+    //       //               : Color.fromRGBO(0, 0, 0, 0.4)),
+    //       //     );
+    //       //   }).toList(),
+    //       // )
+    //     ],
+    //   ),
+    // );
   }
 }

@@ -17,10 +17,10 @@ class RemoteService {
     try {
 //original code
       var response = await client.get(
-        Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
+        // Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
         // Uri.parse('http://mzonefitness.com/test.json'),
 
-        // Uri.parse('http://127.0.0.1:8000/api/events'),
+        Uri.parse('http://127.0.0.1:8000/api/resorts'),
       );
       // var response = await Dio().get('http://127.0.0.1:8000/api/events');
       // final http.Response response = await http.Client().get(
