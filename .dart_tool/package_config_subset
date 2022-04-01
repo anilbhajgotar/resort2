@@ -62,6 +62,10 @@ dependencies
 2.0
 file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/
 file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/lib/
+dio
+2.12
+file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6/
+file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6/lib/
 disposables
 2.0
 file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/

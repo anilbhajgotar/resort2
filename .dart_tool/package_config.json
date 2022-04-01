@@ -92,6 +92,12 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "dio",
+      "rootUri": "file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/dio-4.0.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "disposables",
       "rootUri": "file:///home/anil/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2",
       "packageUri": "lib/",
@@ -494,7 +500,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-03-29T12:28:02.832632Z",
+  "generated": "2022-03-31T09:50:16.856092Z",
   "generator": "pub",
   "generatorVersion": "2.16.1"
 }

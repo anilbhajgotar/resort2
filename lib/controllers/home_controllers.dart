@@ -2,8 +2,9 @@
 // import 'package:flutter_carousel_example/services/remote_services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:resorts/controllers/guest_select.dart';
-import 'package:resorts/services/api_service.dart';
+// import 'package:resorts/controllers/guest_select.dart';
+// import 'package:resorts/models/carousel_event.dart';
+// import 'package:resorts/services/remote_service_event.dart';
 
 import '../models/carousel.dart';
 import '../services/remote_service.dart';
@@ -12,16 +13,19 @@ class HomeController extends GetxController {
   var box = GetStorage();
   var isLoading = false;
   List<Carousel> carouselData = [];
-  List<CarouselDemo> _carouselData = [];
-
-  Item? catalog;
-  CatalogModel? _catalogModel;
+  // List<CarouselEvent> carouselDataEvent = [];
 
   @override
   void onInit() {
     fetchCarousel();
-    if (box.read('carouselData') != null)
+    if (box.read('carouselData') != null) {
       carouselData.assignAll(box.read('carouselData'));
+    }
+    // fetchCarouselEvent();
+
+    // if (box.read('carouselData') != null) {
+    //   carouselDataEvent.assignAll(box.read('carouselData'));
+    // }
     super.onInit();
   }
 
@@ -32,6 +36,8 @@ class HomeController extends GetxController {
       // Future.delayed(Duration(seconds: 2));
       // List<CarouselDemo> _data = await RemoteService.fetchCarouselData();
       List<Carousel> data = await RemoteService.fetchCarouselData();
+      // List<CarouselEvent> _data = await RemoteService.fetchCarouselData();
+
       // List<CatalogModel> _data = await GetData.loadData();
       // data = await RemoteService.fetchCarouselData();
       // catalog = await GetData.loadData();
@@ -55,4 +61,34 @@ class HomeController extends GetxController {
       print('data fetch done');
     }
   }
+
+  // void fetchCarouselEvent() async {
+  //   try {
+  //     isLoading = true;
+  //     update();
+
+  //     List<CarouselEvent> _data =
+  //         await RemoteServiceEvent.fetchCarouselDataEvent();
+
+  //     print(_data);
+  //     print("anil");
+  //     print("Event Carousel");
+
+  //     if (_data != null) {
+  //       // print("anil");
+  //       carouselDataEvent.assignAll(_data);
+  //       // catalog.assignAll(_data);
+
+  //       box.write('carouselData', _data);
+  //       // box.write('catalogdata', _data);
+  //     } else {
+  //       // List<Carousel> data = await RemoteService.fetchCarouselData();
+  //       // print("else is called");
+  //     }
+  //   } finally {
+  //     isLoading = false;
+  //     update();
+  //     print('data fetch done');
+  //   }
+  // }
 }

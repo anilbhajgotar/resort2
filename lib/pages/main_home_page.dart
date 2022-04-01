@@ -5,7 +5,10 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:resorts/components/blog_carousel_slider.dart';
+import 'package:resorts/components/carousel_slider_mian_image.dart';
 import 'package:resorts/components/event_carousel_slider.dart';
+import 'package:resorts/controllers/home_controllers%20event.dart';
+import 'package:resorts/controllers/home_controllers_main_image.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
 import 'package:resorts/pages/demo.dart';
@@ -27,7 +30,6 @@ class MainHomePage extends StatefulWidget {
 
 class _MainHomePageState extends State<MainHomePage>
     with SingleTickerProviderStateMixin {
-  static String url = 'http://mzonefitness.com/test.json';
   final Color color1 = const Color(0xff4338CA);
   final Color color2 = HexColor('#f9f9f9');
   final Color color3 = HexColor('#585858');
@@ -44,7 +46,6 @@ class _MainHomePageState extends State<MainHomePage>
     );
 
     super.initState();
-    // loadData();
   }
 
   @override
@@ -52,21 +53,6 @@ class _MainHomePageState extends State<MainHomePage>
     _tabController?.dispose();
     super.dispose();
   }
-
-  // static loadData() async {
-  //   await Future.delayed(Duration(seconds: 1));
-
-  //   final response = await http.get(Uri.parse(url));
-  //   final catalogJson = response.body;
-
-  //   final decodeData = jsonDecode(catalogJson);
-
-  //   final productData = decodeData["products"];
-  //   CatalogModel.items =
-  //       List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
-
-  //   // setState(() {});
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -129,75 +115,41 @@ class _MainHomePageState extends State<MainHomePage>
                                 builder: (context) => ResortListPage()));
                       },
                       child: Container(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 20, top: 50),
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.yellow.shade400,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  height: 30,
-                                  width: 200,
-                                  child: Center(
-                                    child: Text(
-                                      'No More Payments',
-                                      style: TextStyle(
-                                        color: color3,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20, top: 5),
-                              child: Align(
-                                alignment: Alignment.topLeft,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: color1,
-                                      borderRadius: BorderRadius.circular(10)),
-                                  height: 45,
-                                  width: 250,
-                                  child: Center(
-                                    child: Text(
-                                      'BOOK NOW',
-                                      style: TextStyle(
-                                        color: color2,
-                                        fontSize: 38,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                        child: GetBuilder<HomeControllerMainImage>(
+                          builder: (_c) {
+                            if (_c.isLoading) if (_c
+                                    .carouselDataMianImage.length >
+                                0)
+                              return CarouselSliderMainImage(
+                                  _c.carouselDataMianImage);
+                            else
+                              return CarouselLoading();
+                            else if (_c.carouselDataMianImage.length > 0)
+                              return CarouselSliderMainImage(
+                                  _c.carouselDataMianImage);
+                            else
+                              return Container();
+                          },
                         ),
+
                         // height: 500.0,
-                        height: MediaQuery.of(context).size.height - 350.0,
-                        width: MediaQuery.of(context).size.width - 40.0,
+                        // height: MediaQuery.of(context).size.height - 350.0,
+                        // width: MediaQuery.of(context).size.width - 40.0,
+                        margin: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
-                              BoxShadow(
-                                  blurRadius: 5, blurStyle: BlurStyle.outer)
-                            ],
-                            color: color2,
-                            image: DecorationImage(
-                                image:
-                                    new AssetImage("images/resort/resort.jpg"),
-                                //  NetworkImage(
-                                //     "https://www.excelebiz.in/major-advantages-of-booking-a-hotel-on-online/"),
-                                fit: BoxFit.fill)),
+                          borderRadius: BorderRadius.circular(15),
+                          boxShadow: [
+                            BoxShadow(blurRadius: 1, blurStyle: BlurStyle.outer)
+                          ],
+                          // color: color2,
+                          // image:
+                          // DecorationImage(
+                          //     image:
+                          //         new AssetImage("images/resort/resort.jpg"),
+                          //     //  NetworkImage(
+                          //     //     "https://www.excelebiz.in/major-advantages-of-booking-a-hotel-on-online/"),
+                          //     fit: BoxFit.fill)
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -256,14 +208,14 @@ class _MainHomePageState extends State<MainHomePage>
                     SizedBox(
                       height: 10,
                     ),
-                    GetBuilder<HomeController>(
+                    GetBuilder<HomeControllerEvent>(
                       builder: (_c) {
-                        if (_c.isLoading) if (_c.carouselData.length > 0)
-                          return EventCarouselSlider(_c.carouselData);
+                        if (_c.isLoading) if (_c.carouselDataEvent.length > 0)
+                          return EventCarouselSlider(_c.carouselDataEvent);
                         else
                           return CarouselLoading();
-                        else if (_c.carouselData.length > 0)
-                          return EventCarouselSlider(_c.carouselData);
+                        else if (_c.carouselDataEvent.length > 0)
+                          return EventCarouselSlider(_c.carouselDataEvent);
                         else
                           return Container();
                       },

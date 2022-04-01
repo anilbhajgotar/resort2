@@ -12,190 +12,194 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/debug/AndroidManifest.xml:6:5-66
-14-->/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/debug/AndroidManifest.xml:6:22-64
-15    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-15-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:28:5-79
-15-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:28:22-76
-16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-16-->[com.android.installreferrer:installreferrer:1.0] /home/anil/.gradle/caches/transforms-2/files-2.1/40b898b8381ae3afc9fcc0a7a23d1268/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
-16-->[com.android.installreferrer:installreferrer:1.0] /home/anil/.gradle/caches/transforms-2/files-2.1/40b898b8381ae3afc9fcc0a7a23d1268/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
-17
-18    <application
-19        android:name="io.flutter.app.FlutterMultiDexApplication"
-20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.6.0] /home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
-21        android:debuggable="true"
-22        android:icon="@mipmap/ic_launcher"
-23        android:label="resorts"
-24        android:supportsRtl="true" >
-24-->[com.facebook.android:facebook-login:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/61990be37c90f5d5098e26d4f9c28fde/jetified-facebook-login-13.0.0/AndroidManifest.xml:28:18-44
-25        <activity
-26            android:name="com.example.resorts.MainActivity"
-27            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-28            android:exported="true"
-29            android:hardwareAccelerated="true"
-30            android:launchMode="singleTop"
-31            android:theme="@style/LaunchTheme"
-32            android:windowSoftInputMode="adjustResize" >
-33
-34            <!--
-35                 Specifies an Android theme to apply to this Activity as soon as
-36                 the Android process has started. This theme is visible to the user
-37                 while the Flutter UI initializes. After that, this theme continues
-38                 to determine the Window background behind the Flutter UI.
-39            -->
-40            <meta-data
-41                android:name="io.flutter.embedding.android.NormalTheme"
-42                android:resource="@style/NormalTheme" />
-43
-44            <intent-filter>
-45                <action android:name="android.intent.action.MAIN" />
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-48            </intent-filter>
-49        </activity>
-50        <!--
-51             Don't delete the meta-data below.
-52             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-53        -->
-54        <meta-data
-55            android:name="flutterEmbedding"
-56            android:value="2" />
-57
-58        <uses-library
-58-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
-59            android:name="androidx.window.extensions"
-59-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
-60            android:required="false" />
-60-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
-61        <uses-library
-61-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
-62            android:name="androidx.window.sidecar"
-62-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
-63            android:required="false" />
-63-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
-64
-65        <activity
-65-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:30:9-33:66
-66            android:name="com.facebook.FacebookActivity"
-66-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:31:13-57
-67            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-67-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:32:13-96
-68            android:theme="@style/com_facebook_activity_theme" />
-68-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:33:13-63
-69        <activity android:name="com.facebook.CustomTabMainActivity" />
-69-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:34:9-71
-69-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:34:19-68
-70        <activity
-70-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:35:9-49:20
-71            android:name="com.facebook.CustomTabActivity"
-71-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:36:13-58
-72            android:exported="true" >
-72-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:37:13-36
-73            <intent-filter>
-73-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:39:13-48:29
-74                <action android:name="android.intent.action.VIEW" />
-74-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:40:17-69
-74-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:40:25-66
-75
-76                <category android:name="android.intent.category.DEFAULT" />
-76-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:42:17-76
-76-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:42:27-73
-77                <category android:name="android.intent.category.BROWSABLE" />
-77-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:43:17-78
-77-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:43:27-75
-78
-79                <data
-79-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:45:17-47:50
-80                    android:host="cct.com.example.resorts"
-80-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:46:21-56
-81                    android:scheme="fbconnect" />
-81-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:47:21-47
-82            </intent-filter>
-83        </activity>
-84        <activity
-84-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
-85            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-85-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
-86            android:excludeFromRecents="true"
-86-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
-87            android:exported="false"
-87-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
-88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-88-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
-89        <!--
-90            Service handling Google Sign-In user revocation. For apps that do not integrate with
-91            Google Sign-In, this service will never be started.
-92        -->
-93        <service
-93-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
-94            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-94-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
-95            android:exported="true"
-95-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
-96            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-96-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
-97
-98        <activity
-98-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
-99            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-99-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
-100            android:exported="false"
-100-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
-101            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-101-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
-102
-103        <meta-data
-103-->[com.google.android.gms:play-services-basement:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
-104            android:name="com.google.android.gms.version"
-104-->[com.google.android.gms:play-services-basement:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
-105            android:value="@integer/google_play_services_version" />
-105-->[com.google.android.gms:play-services-basement:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
-106        <!--
-107         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
-108         with the application context. This config is merged in with the host app's manifest,
-109         but there can only be one provider with the same authority activated at any given
-110         point; so if the end user has two or more different apps that use Facebook SDK, only the
-111         first one will be able to use the provider. To work around this problem, we use the
-112         following placeholder in the authority to identify each host application as if it was
-113         a completely different provider.
-114        -->
-115        <provider
-115-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:41:9-44:40
-116            android:name="com.facebook.internal.FacebookInitProvider"
-116-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:42:13-70
-117            android:authorities="com.example.resorts.FacebookInitProvider"
-117-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:43:13-72
-118            android:exported="false" />
-118-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:44:13-37
-119
-120        <receiver
-120-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:46:9-52:20
-121            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-121-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:47:13-86
-122            android:exported="false" >
-122-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:48:13-37
-123            <intent-filter>
-123-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:49:13-51:29
-124                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-124-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:50:17-95
-124-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:50:25-92
-125            </intent-filter>
-126        </receiver>
-127        <receiver
-127-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:53:9-59:20
-128            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
-128-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:54:13-118
-129            android:exported="false" >
-129-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:55:13-37
-130            <intent-filter>
-130-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:56:13-58:29
-131                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
-131-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:57:17-103
-131-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:57:25-100
-132            </intent-filter>
-133        </receiver>
-134    </application>
-135
-136</manifest>
+14-->/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/main/AndroidManifest.xml:3:5-67
+14-->/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/main/AndroidManifest.xml:3:22-64
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/main/AndroidManifest.xml:4:5-5:60
+15-->/home/anil/StudioProjects/resort-master-20220323T095241Z-001/resort_new/android/app/src/main/AndroidManifest.xml:5:4-58
+16    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+16-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:28:5-79
+16-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:28:22-76
+17    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+17-->[com.android.installreferrer:installreferrer:1.0] /home/anil/.gradle/caches/transforms-2/files-2.1/40b898b8381ae3afc9fcc0a7a23d1268/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+17-->[com.android.installreferrer:installreferrer:1.0] /home/anil/.gradle/caches/transforms-2/files-2.1/40b898b8381ae3afc9fcc0a7a23d1268/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+18
+19    <application
+20        android:name="io.flutter.app.FlutterMultiDexApplication"
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.6.0] /home/anil/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+24        android:label="resorts"
+25        android:supportsRtl="true" >
+25-->[com.facebook.android:facebook-login:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/61990be37c90f5d5098e26d4f9c28fde/jetified-facebook-login-13.0.0/AndroidManifest.xml:28:18-44
+26        <activity
+27            android:name="com.example.resorts.MainActivity"
+28            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+29            android:exported="true"
+30            android:hardwareAccelerated="true"
+31            android:launchMode="singleTop"
+32            android:theme="@style/LaunchTheme"
+33            android:usesCleartextTraffic="true"
+34            android:windowSoftInputMode="adjustResize" >
+35
+36            <!--
+37                 Specifies an Android theme to apply to this Activity as soon as
+38                 the Android process has started. This theme is visible to the user
+39                 while the Flutter UI initializes. After that, this theme continues
+40                 to determine the Window background behind the Flutter UI.
+41            -->
+42            <meta-data
+43                android:name="io.flutter.embedding.android.NormalTheme"
+44                android:resource="@style/NormalTheme" />
+45
+46            <intent-filter>
+47                <action android:name="android.intent.action.MAIN" />
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+50            </intent-filter>
+51        </activity>
+52        <!--
+53             Don't delete the meta-data below.
+54             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+55        -->
+56        <meta-data
+57            android:name="flutterEmbedding"
+58            android:value="2" />
+59
+60        <uses-library
+60-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+61            android:name="androidx.window.extensions"
+61-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+62            android:required="false" />
+62-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+63        <uses-library
+63-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+64            android:name="androidx.window.sidecar"
+64-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+65            android:required="false" />
+65-->[androidx.window:window:1.0.0-beta04] /home/anil/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+66
+67        <activity
+67-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:30:9-33:66
+68            android:name="com.facebook.FacebookActivity"
+68-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:31:13-57
+69            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+69-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:32:13-96
+70            android:theme="@style/com_facebook_activity_theme" />
+70-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:33:13-63
+71        <activity android:name="com.facebook.CustomTabMainActivity" />
+71-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:34:9-71
+71-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:34:19-68
+72        <activity
+72-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:35:9-49:20
+73            android:name="com.facebook.CustomTabActivity"
+73-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:36:13-58
+74            android:exported="true" >
+74-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:37:13-36
+75            <intent-filter>
+75-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:39:13-48:29
+76                <action android:name="android.intent.action.VIEW" />
+76-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:40:17-69
+76-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:40:25-66
+77
+78                <category android:name="android.intent.category.DEFAULT" />
+78-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:42:17-76
+78-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:42:27-73
+79                <category android:name="android.intent.category.BROWSABLE" />
+79-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:43:17-78
+79-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:43:27-75
+80
+81                <data
+81-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:45:17-47:50
+82                    android:host="cct.com.example.resorts"
+82-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:46:21-56
+83                    android:scheme="fbconnect" />
+83-->[com.facebook.android:facebook-common:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/dda06994c28ce0d80d11978310fddb29/jetified-facebook-common-13.0.0/AndroidManifest.xml:47:21-47
+84            </intent-filter>
+85        </activity>
+86        <activity
+86-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+87            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+87-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+88            android:excludeFromRecents="true"
+88-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+89            android:exported="false"
+89-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+90            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+90-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+91        <!--
+92            Service handling Google Sign-In user revocation. For apps that do not integrate with
+93            Google Sign-In, this service will never be started.
+94        -->
+95        <service
+95-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+96            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+96-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
+97            android:exported="true"
+97-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+98            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+98-->[com.google.android.gms:play-services-auth:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/2f8a2a06c54eedef332e4c91c7057ac7/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+99
+100        <activity
+100-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:23:9-26:75
+101            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+101-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:24:13-79
+102            android:exported="false"
+102-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:25:13-37
+103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+103-->[com.google.android.gms:play-services-base:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/07eb11fedf1daf9a58bb706244459495/jetified-play-services-base-16.0.1/AndroidManifest.xml:26:13-72
+104
+105        <meta-data
+105-->[com.google.android.gms:play-services-basement:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/AndroidManifest.xml:23:9-25:69
+106            android:name="com.google.android.gms.version"
+106-->[com.google.android.gms:play-services-basement:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/AndroidManifest.xml:24:13-58
+107            android:value="@integer/google_play_services_version" />
+107-->[com.google.android.gms:play-services-basement:16.0.1] /home/anil/.gradle/caches/transforms-2/files-2.1/00aec41df94c65881f76c8e347df1dfb/jetified-play-services-basement-16.0.1/AndroidManifest.xml:25:13-66
+108        <!--
+109         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+110         with the application context. This config is merged in with the host app's manifest,
+111         but there can only be one provider with the same authority activated at any given
+112         point; so if the end user has two or more different apps that use Facebook SDK, only the
+113         first one will be able to use the provider. To work around this problem, we use the
+114         following placeholder in the authority to identify each host application as if it was
+115         a completely different provider.
+116        -->
+117        <provider
+117-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:41:9-44:40
+118            android:name="com.facebook.internal.FacebookInitProvider"
+118-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:42:13-70
+119            android:authorities="com.example.resorts.FacebookInitProvider"
+119-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:43:13-72
+120            android:exported="false" />
+120-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:44:13-37
+121
+122        <receiver
+122-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:46:9-52:20
+123            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+123-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:47:13-86
+124            android:exported="false" >
+124-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:48:13-37
+125            <intent-filter>
+125-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:49:13-51:29
+126                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+126-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:50:17-95
+126-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:50:25-92
+127            </intent-filter>
+128        </receiver>
+129        <receiver
+129-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:53:9-59:20
+130            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+130-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:54:13-118
+131            android:exported="false" >
+131-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:55:13-37
+132            <intent-filter>
+132-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:56:13-58:29
+133                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+133-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:57:17-103
+133-->[com.facebook.android:facebook-core:13.0.0] /home/anil/.gradle/caches/transforms-2/files-2.1/bdc30d37c0e33f1d24b4fce0ddee048f/jetified-facebook-core-13.0.0/AndroidManifest.xml:57:25-100
+134            </intent-filter>
+135        </receiver>
+136    </application>
+137
+138</manifest>

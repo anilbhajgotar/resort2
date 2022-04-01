@@ -3,7 +3,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
-import 'package:resorts/services/api_service.dart';
+import 'package:dio/dio.dart';
+import 'package:resorts/services/remote_service_event.dart';
 
 import '../models/carousel.dart';
 
@@ -16,16 +17,21 @@ class RemoteService {
     try {
 //original code
       var response = await client.get(
-        //   // Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
+        Uri.parse('https://my-grocery-strapi.herokuapp.com/home-carousels'),
         // Uri.parse('http://mzonefitness.com/test.json'),
 
-        Uri.parse('http://127.0.0.1:8000/api/events'),
+        // Uri.parse('http://127.0.0.1:8000/api/events'),
       );
-      // final response = await http.get(Uri.parse(url));
+      // var response = await Dio().get('http://127.0.0.1:8000/api/events');
+      // final http.Response response = await http.Client().get(
+      //   Uri.parse('http://127.0.0.1:8000/api/events'),
+      // );
+      // final response =
+      //     await http.get(Uri.parse("http://127.0.0.1:8000/api/events"));
       print(response.body);
       print("object");
-      final cataLogJson = response.body;
-      final decodeData = jsonDecode(cataLogJson);
+      // final cataLogJson = response.body;
+      // final decodeData = jsonDecode(cataLogJson);
       // var productData = decodeData["products"];
       // final cataLogJson = response.body;
       // final decodeData = jsonDecode(cataLogJson);
@@ -45,7 +51,7 @@ class RemoteService {
 
       // return carouselFromJson(decodeData);
     } catch (e) {
-      // print(e);
+      print(e);
       // print("object");
       return null;
     }

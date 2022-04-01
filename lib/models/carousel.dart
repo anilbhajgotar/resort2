@@ -13,8 +13,8 @@ class Carousel {
     required this.title,
   });
 
-  final int id;
-  // final String id;
+  // final int id;
+  final String id;
 
   final String image;
   final String title;
@@ -22,13 +22,13 @@ class Carousel {
     print(json["image"]);
     print(json["id"]);
     return Carousel(
-      id: json["id"] == null ? null : json["id"],
+      id: json["_id"] == null ? null : json["_id"],
       // image: json["image"] == null ? null : json["image"],
-      image: json["image"] == null ? null : json["image"],
+      image: json["image"]["url"] == null ? null : json["image"]["url"],
 
       // image:
       //     "https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_900,h_700/https://herculesfitness.co.in/wp-content/uploads/sites/11/2020/12/tm22e.png",
-      title: json["title"] == null ? null : json["title"],
+      title: json["createdAt"] == null ? null : json["createdAt"],
     );
   }
   // Carousel(
@@ -38,7 +38,7 @@ class Carousel {
   //     );
 
   Map<String, dynamic> toJson() => {
-        "id": id == null ? null : id,
+        "_id": id == null ? null : id,
         "image": image == null ? null : image,
         // "image": jsonDecode(image) == null ? null : jsonDecode(image),
       };
