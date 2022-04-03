@@ -14,14 +14,14 @@ import '../services/remote_service.dart';
 class HomeControllerMainImage extends GetxController {
   var box = GetStorage();
   var isLoading = false;
-  List<CarouselMainImage> carouselDataMianImage = [];
+  List<CarouselMainImage> carouselDataMianImageList = [];
   // List<CarouselEvent> carouselDataEvent = [];
 
   @override
   void onInit() {
     fetchCarousel();
     if (box.read('carouselData') != null) {
-      carouselDataMianImage.assignAll(box.read('carouselData'));
+      carouselDataMianImageList.assignAll(box.read('carouselData'));
     }
     // fetchCarouselEvent();
 
@@ -49,7 +49,7 @@ class HomeControllerMainImage extends GetxController {
       print("anil");
       if (data != null) {
         // print("anil");
-        carouselDataMianImage.assignAll(data);
+        carouselDataMianImageList.assignAll(data);
         // catalog.assignAll(_data);
 
         box.write('carouselData', data);

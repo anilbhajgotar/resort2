@@ -20,6 +20,8 @@ class CarouselSliderDataFound extends StatefulWidget {
 
 class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
   int _current = 0;
+
+  RegExp exp = RegExp(r"<[^>]*>", multiLine: true, caseSensitive: true);
   List<Widget>? image;
   late List<Widget> imageSlider;
 
@@ -91,7 +93,7 @@ class _CarouselSliderDataFoundState extends State<CarouselSliderDataFound> {
                             child: Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                e.title,
+                                e.description.replaceAll(exp, ""),
                                 style: TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w300),
                               ),

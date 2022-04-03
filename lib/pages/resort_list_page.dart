@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:resorts/components/resort_list_carousel.dart';
+import 'package:resorts/components/carousel_resort_list_page.dart';
 import 'package:resorts/controllers/guest_select.dart';
+import 'package:resorts/models/carousel_resort_list_page.dart';
 import 'package:resorts/pages/bottom_bar.dart';
 import 'package:resorts/pages/custome_image_scroll.dart';
 import 'package:resorts/pages/demo.dart';
@@ -254,148 +255,16 @@ class _ResortListPageState extends State<ResortListPage> {
           child: GetBuilder<HomeController>(
             builder: (_c) {
               if (_c.isLoading) if (_c.carouselData.length > 0)
-                return ResortListCarousel(_c.carouselData);
+                return CarouselResortList(_c.carouselData);
               else
                 return CarouselLoading();
               else if (_c.carouselData.length > 0)
-                return ResortListCarousel(_c.carouselData);
+                return CarouselResortList(_c.carouselData);
               else
                 return Container();
             },
           ),
         ),
-        // Scaffold(
-
-        // body:
-        //     ListView(
-        //   // shrinkWrap: true,
-        //   children: [
-        //     InkWell(
-        //       onTap: () {
-        //         Navigator.push(
-        //             context,
-        //             MaterialPageRoute(
-        //                 builder: (context) => ResortDetailsPage()));
-        //       },
-        //       child: Container(
-        //         margin: EdgeInsets.all(10),
-        //         decoration: BoxDecoration(
-        //             // border: Border.all(),
-        //             color: Colors.white,
-        //             boxShadow: [
-        //               BoxShadow(blurRadius: 3, blurStyle: BlurStyle.outer)
-        //             ],
-        //             borderRadius: BorderRadius.circular(8)),
-        //         // height: 230,
-        //         // height: MediaQuery.of(context).size.height - 550,
-        //         child: Column(
-        //           children: [
-        //             GetBuilder<HomeController>(
-        //               builder: (_c) {
-        //                 if (_c.isLoading) if (_c.carouselData.length > 0)
-        //                   return ResortListCarousel(_c.carouselData);
-        //                 else
-        //                   return CarouselLoading();
-        //                 else if (_c.carouselData.length > 0)
-        //                   return ResortListCarousel(_c.carouselData);
-        //                 else
-        //                   return Container();
-        //               },
-        //             ),
-        //           ],
-        //         ),
-        //       ),
-        //     ),
-        //     Container(
-        //       margin: EdgeInsets.all(10),
-        //       decoration: BoxDecoration(
-        //           // border: Border.all(),
-        //           color: Colors.white,
-        //           boxShadow: [
-        //             BoxShadow(blurRadius: 3, blurStyle: BlurStyle.outer)
-        //           ],
-        //           borderRadius: BorderRadius.circular(8)),
-        //       // height: 230,
-        //       // height: MediaQuery.of(context).size.height - 550,
-        //       child: Column(
-        //         children: [
-        //           GetBuilder<HomeController>(
-        //             builder: (_c) {
-        //               if (_c.isLoading) if (_c.carouselData.length > 0)
-        //                 return ResortListCarousel(_c.carouselData);
-        //               else
-        //                 return CarouselLoading();
-        //               else if (_c.carouselData.length > 0)
-        //                 return ResortListCarousel(_c.carouselData);
-        //               else
-        //                 return Container();
-        //             },
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //     Container(
-        //       margin: EdgeInsets.all(10),
-        //       decoration: BoxDecoration(
-        //           // border: Border.all(),
-        //           color: Colors.white,
-        //           boxShadow: [
-        //             BoxShadow(blurRadius: 3, blurStyle: BlurStyle.outer)
-        //           ],
-        //           borderRadius: BorderRadius.circular(8)),
-        //       // height: 230,
-        //       // height: MediaQuery.of(context).size.height - 550,
-        //       child: Column(
-        //         children: [
-        //           GetBuilder<HomeController>(
-        //             builder: (_c) {
-        //               if (_c.isLoading) if (_c.carouselData.length > 0)
-        //                 return ResortListCarousel(_c.carouselData);
-        //               else
-        //                 return CarouselLoading();
-        //               else if (_c.carouselData.length > 0)
-        //                 return ResortListCarousel(_c.carouselData);
-        //               else
-        //                 return Container();
-        //             },
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //     Container(
-        //       margin: EdgeInsets.all(10),
-        //       decoration: BoxDecoration(
-        //           // border: Border.all(),
-        //           color: Colors.white,
-        //           boxShadow: [
-        //             BoxShadow(blurRadius: 3, blurStyle: BlurStyle.outer)
-        //           ],
-        //           borderRadius: BorderRadius.circular(8)),
-        //       // height: 230,
-        //       // height: MediaQuery.of(context).size.height - 550,
-        //       child: Column(
-        //         children: [
-        //           GetBuilder<HomeController>(
-        //             builder: (_c) {
-        //               if (_c.isLoading) if (_c.carouselData.length > 0)
-        //                 return ResortListCarousel(_c.carouselData);
-        //               else
-        //                 return CarouselLoading();
-        //               else if (_c.carouselData.length > 0)
-        //                 return ResortListCarousel(_c.carouselData);
-        //               else
-        //                 return Container();
-        //             },
-        //           ),
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
-
-        // bottomNavigationBar: BottomNavBarFb5(),
-
-        // )
       ),
     ));
   }

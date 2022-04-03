@@ -125,15 +125,15 @@ class _MainHomePageState extends State<MainHomePage>
                         child: GetBuilder<HomeControllerMainImage>(
                           builder: (_c) {
                             if (_c.isLoading) if (_c
-                                    .carouselDataMianImage.length >
+                                    .carouselDataMianImageList.length >
                                 0)
                               return CarouselSliderMainImage(
-                                  _c.carouselDataMianImage);
+                                  _c.carouselDataMianImageList);
                             else
                               return CarouselLoading();
-                            else if (_c.carouselDataMianImage.length > 0)
+                            else if (_c.carouselDataMianImageList.length > 0)
                               return CarouselSliderMainImage(
-                                  _c.carouselDataMianImage);
+                                  _c.carouselDataMianImageList);
                             else
                               return Container();
                           },

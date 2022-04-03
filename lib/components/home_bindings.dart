@@ -11,6 +11,6 @@ class HomeBinding extends Bindings {
     Get.lazyPut<HomeController>(() => HomeController());
     Get.lazyPut<HomeControllerEvent>(() => HomeControllerEvent());
     Get.lazyPut<HomeControllerMainImage>(() => HomeControllerMainImage());
-    // Get.lazyPut<HomeControllerMainImage>(() => HomeControllerMainImage());
+    // Get.lazyPut<HomeControllerResortPage>(() => HomeControllerResortPage());
   }
 }

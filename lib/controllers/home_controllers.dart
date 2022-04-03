@@ -33,27 +33,17 @@ class HomeController extends GetxController {
     try {
       isLoading = true;
       update();
-      // Future.delayed(Duration(seconds: 2));
-      // List<CarouselDemo> _data = await RemoteService.fetchCarouselData();
-      List<Carousel> data = await RemoteService.fetchCarouselData();
-      // List<CarouselEvent> _data = await RemoteService.fetchCarouselData();
 
-      // List<CatalogModel> _data = await GetData.loadData();
-      // data = await RemoteService.fetchCarouselData();
-      // catalog = await GetData.loadData();
+      List<Carousel> data = await RemoteService.fetchCarouselData();
 
       print(data);
-      print("anil");
+      print("carousel Data print");
       if (data != null) {
-        // print("anil");
         carouselData.assignAll(data);
-        // catalog.assignAll(_data);
 
         box.write('carouselData', data);
-        // box.write('catalogdata', _data);
       } else {
-        // List<Carousel> data = await RemoteService.fetchCarouselData();
-        print("else is called");
+        print("else called");
       }
     } finally {
       isLoading = false;
@@ -61,34 +51,4 @@ class HomeController extends GetxController {
       print('data fetch done');
     }
   }
-
-  // void fetchCarouselEvent() async {
-  //   try {
-  //     isLoading = true;
-  //     update();
-
-  //     List<CarouselEvent> _data =
-  //         await RemoteServiceEvent.fetchCarouselDataEvent();
-
-  //     print(_data);
-  //     print("anil");
-  //     print("Event Carousel");
-
-  //     if (_data != null) {
-  //       // print("anil");
-  //       carouselDataEvent.assignAll(_data);
-  //       // catalog.assignAll(_data);
-
-  //       box.write('carouselData', _data);
-  //       // box.write('catalogdata', _data);
-  //     } else {
-  //       // List<Carousel> data = await RemoteService.fetchCarouselData();
-  //       // print("else is called");
-  //     }
-  //   } finally {
-  //     isLoading = false;
-  //     update();
-  //     print('data fetch done');
-  //   }
-  // }
 }

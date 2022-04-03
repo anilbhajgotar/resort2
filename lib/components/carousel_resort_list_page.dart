@@ -1,37 +1,45 @@
-import 'dart:convert';
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../models/carousel.dart';
 // import 'package:flutter_carousel_example/models/carousel.dart';
 
-class ResortListCarousel extends StatefulWidget {
+class CarouselResortList extends StatefulWidget {
   final List<Carousel> carouselList;
-  const ResortListCarousel(this.carouselList);
+  const CarouselResortList(this.carouselList);
 
   @override
-  _ResortListCarousel createState() => _ResortListCarousel();
+  _CarouselResortList createState() => _CarouselResortList();
 }
 
-class _ResortListCarousel extends State<ResortListCarousel> {
+class _CarouselResortList extends State<CarouselResortList> {
   int _current = 0;
+
+  RegExp exp = RegExp(r"<[^>]*>", multiLine: true, caseSensitive: true);
   List<Widget>? image;
   late List<Widget> imageSlider;
-  void functionData() {}
+
   @override
   void initState() {
     image = widget.carouselList
         .map((e) => Container(
+              height: 230,
               decoration: BoxDecoration(
-                  // border: Border.all(),
                   color: Colors.white,
                   boxShadow: [
-                    BoxShadow(blurRadius: 3, blurStyle: BlurStyle.outer)
+                    BoxShadow(
+                      blurStyle: BlurStyle.outer,
+                      blurRadius: 3,
+                    )
                   ],
-                  borderRadius: BorderRadius.circular(8)),
+                  borderRadius: BorderRadius.circular(10)),
+              // width: 350,
+              margin: EdgeInsets.all(10),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -40,11 +48,16 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10)),
-                      child: CachedNetworkImage(
-                        height: 150,
+                      child:
+                          // Image.network(e.image)
+                          CachedNetworkImage(
+                        height: 100,
                         fit: BoxFit.cover,
                         // width: 400,
                         imageUrl: e.image,
+
+                        // Image.network(e.image);//  e.image,
+
                         errorWidget: (context, url, error) => Icon(Icons.error),
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) => Center(
@@ -66,7 +79,8 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Text(
-                                  "Resort",
+                                  // "Test Title",
+                                  e.title,
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold),
@@ -103,7 +117,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        "12 guests",
+                                        e.guest + " guests",
                                         style: TextStyle(fontSize: 12),
                                       ),
                                     ),
@@ -113,7 +127,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
                                     child: Text(
-                                      "1 bedroom",
+                                      e.bedroom.toString() + " bedroom",
                                       style: TextStyle(fontSize: 12),
                                     ),
                                   ),
@@ -122,7 +136,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
                                     child: Text(
-                                      "1 bed",
+                                      e.bed.toString(),
                                       style: TextStyle(fontSize: 12),
                                     ),
                                   ),
@@ -131,7 +145,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                                   child: Padding(
                                     padding: const EdgeInsets.all(4.0),
                                     child: Text(
-                                      "3 baths",
+                                      e.bath.toString() + " baths",
                                       style: TextStyle(fontSize: 12),
                                     ),
                                   ),
@@ -145,7 +159,7 @@ class _ResortListCarousel extends State<ResortListCarousel> {
                               child: Align(
                                 alignment: Alignment.centerRight,
                                 child: Text(
-                                  "250 rs/night",
+                                  e.price.toString() + " SAR/night",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18),
@@ -166,22 +180,27 @@ class _ResortListCarousel extends State<ResortListCarousel> {
 
   @override
   Widget build(BuildContext context) {
+    // print("data Found");
     return ListView.builder(
         itemCount: image!.length,
         itemBuilder: (context, index) {
           final catalog = image![index];
-          return Container(
+          return
+              // Container(
+              //   child: catalog,
+              // );
+              Container(
             margin: EdgeInsets.all(10),
             child: CarouselSlider(
-                items: image,
+                items: <Widget>[image![index]],
                 options: CarouselOptions(
                     autoPlay: false,
                     height: 230,
-                    initialPage: 0,
+                    initialPage: 1,
                     enlargeCenterPage: false,
                     // aspectRatio: 16/9,
                     enableInfiniteScroll: false,
-                    viewportFraction: 1,
+                    viewportFraction: 1.0,
                     onPageChanged: (index, reason) {
                       setState(() {
                         _current = index;
@@ -190,42 +209,22 @@ class _ResortListCarousel extends State<ResortListCarousel> {
           );
         });
     // Container(
-    //   // margin: EdgeInsets.all(10),
-    //   child: Column(
-    //     children: [
-    //       CarouselSlider(
-    //           items: image,
-    //           options: CarouselOptions(
-    //               autoPlay: false,
-    //               height: 230,
-    //               initialPage: 0,
-    //               enlargeCenterPage: false,
-    //               // aspectRatio: 16/9,
-    //               enableInfiniteScroll: false,
-    //               viewportFraction: 1,
-    //               onPageChanged: (index, reason) {
-    //                 setState(() {
-    //                   _current = index;
-    //                 });
-    //               })),
-    //       // Row(
-    //       //   mainAxisAlignment: MainAxisAlignment.center,
-    //       //   children: widget.carouselList.map((e) {
-    //       //     int index = widget.carouselList.indexOf(e);
-    //       //     return Container(
-    //       //       width: 8,
-    //       //       height: 8,
-    //       //       margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
-    //       //       decoration: BoxDecoration(
-    //       //           shape: BoxShape.circle,
-    //       //           color: _current == index
-    //       //               ? Color.fromRGBO(0, 0, 0, 0.9)
-    //       //               : Color.fromRGBO(0, 0, 0, 0.4)),
-    //       //     );
-    //       //   }).toList(),
-    //       // )
-    //     ],
-    //   ),
+    //   margin: EdgeInsets.all(10),
+    //   child: CarouselSlider(
+    //       items: image,
+    //       options: CarouselOptions(
+    //           autoPlay: false,
+    //           height: 230,
+    //           initialPage: 1,
+    //           enlargeCenterPage: false,
+    //           // aspectRatio: 16/9,
+    //           enableInfiniteScroll: false,
+    //           viewportFraction: 0.45,
+    //           onPageChanged: (index, reason) {
+    //             setState(() {
+    //               _current = index;
+    //             });
+    //           })),
     // );
   }
 }
